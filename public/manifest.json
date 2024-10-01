@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Tanslaty",
+  "version": "1.0",
+  "description": "A Chrome Extension to extract Whatsapp Messages and translate them as desired ",
+  "permissions": ["tabs","activeTab","scripting", "activeTab"],
+  "host_permissions": [
+    "https://web.whatsapp.com/*"
+  ],
+  "action": {
+    "default_popup": "index.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://web.whatsapp.com/*"],
+      "js": ["contentScript.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
